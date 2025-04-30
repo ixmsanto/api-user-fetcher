@@ -135,5 +135,5 @@ You can visit `/` to:
 
 ## 👤 Author
 
-**Your Name**  
+**Santhosh C**  
 GitHub: [ixmsanto](https://github.com/ixmsanto)
