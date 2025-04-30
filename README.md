@@ -1,6 +1,6 @@
-# Laravel 11 - User API Integration with AJAX, jQuery, and Scheduler
+# Laravel 12 - User API Integration with AJAX, jQuery, and Scheduler
 
-This Laravel 11 application fetches user data from the public API [JSONPlaceholder](https://jsonplaceholder.typicode.com/users), displays it in a searchable table, and stores it in a MySQL database. It also supports AJAX fetching and periodic updates using Laravel Scheduler.
+This Laravel 12 application fetches user data from the public API [JSONPlaceholder](https://jsonplaceholder.typicode.com/users), displays it in a searchable table, and stores it in a MySQL database. It also supports AJAX fetching and periodic updates using Laravel Scheduler.
 
 ---
 
@@ -18,7 +18,7 @@ This Laravel 11 application fetches user data from the public API [JSONPlacehold
 
 ## 📦 Tech Stack
 
-- Laravel 11
+- Laravel 12
 - MySQL
 - jQuery + AJAX
 - Blade
