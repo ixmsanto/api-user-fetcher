@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->json('address'); // store JSON address
+            $table->json('address')->nullable(false); // store JSON address
             $table->timestamps();
         });
 
