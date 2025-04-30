@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+// app/Http/Controllers/UserController.php
+
 use Illuminate\Support\Facades\Http;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,11 +21,19 @@ class UserController extends Controller
             $users = $response->json();
 
             foreach ($users as $userData) {
+                $address = [
+                    'street' => $userData['address']['street'] ?? '',
+                    'suite' => $userData['address']['suite'] ?? '',
+                    'city' => $userData['address']['city'] ?? '',
+                    'zipcode' => $userData['address']['zipcode'] ?? '',
+                    'geo' => $userData['address']['geo'] ?? ['lat' => '', 'lng' => ''],
+                ];
+
                 User::updateOrCreate(
                     ['email' => $userData['email']],
                     [
                         'name' => $userData['name'],
-                        'address' => json_encode($userData['address']),
+                        'address' => $address,
                     ]
                 );
             }

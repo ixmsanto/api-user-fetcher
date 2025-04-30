@@ -1,3 +1,5 @@
+// path: resources/views/users/index.blade.php
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,10 +39,13 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
-                    @php
-                        $address = json_decode($user->address, true);
-                        echo $address['street'] . ', ' . $address['city'];
-                    @endphp
+                    {{ isset($user->address['street']) ? $user->address['street'] : 'N/A' }},
+                    {{ isset($user->address['suite']) ? $user->address['suite'] : '' }},
+                    {{ isset($user->address['city']) ? $user->address['city'] : 'N/A' }},
+                    {{ isset($user->address['zipcode']) ? $user->address['zipcode'] : 'N/A' }}
+                    <br>
+                    <small>Lat: {{ isset($user->address['geo']['lat']) ? $user->address['geo']['lat'] : 'N/A' }},
+                        Lng: {{ isset($user->address['geo']['lng']) ? $user->address['geo']['lng'] : 'N/A' }}</small>
                 </td>
             </tr>
         @empty
@@ -48,6 +53,7 @@
                 <td colspan="3">No users found</td>
             </tr>
         @endforelse
+
     </table>
 
     <script>
